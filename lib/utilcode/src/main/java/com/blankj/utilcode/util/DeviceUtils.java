@@ -72,6 +72,21 @@ public final class DeviceUtils {
                 Settings.Global.ADB_ENABLED, 0
         ) > 0;
     }
+    
+    /**
+     * Return whether Developer Options are enabled.
+     *
+     * @return {@code true}: yes<br>{@code false}: no
+     */
+    public static boolean isDeveloperOptionsEnabled() {
+        return Settings.Global.getInt(
+            Utils.getApp().getContentResolver(),
+            Settings.Global.DEVELOPMENT_SETTINGS_ENABLED,
+            0
+        ) == 1;
+    }
+    
+    
 
     /**
      * Return the version name of device's system.
